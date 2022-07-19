@@ -1,19 +1,31 @@
 import React from 'react';
-import {Stack, Typography} from '@mui/material';
-// import Icon from '..assets/icons/gyn.png';
+import { Stack, Typography } from '@mui/material';
+import Icon from '../assets/icons/gym.png';
 
 
-const BodyPart = () => {
+const BodyPart = ({ item, setBodyPart, bodyPart }) => {
   return (
     <Stack
-    type='button'
-    alignItems='center'
-    justifyContent='center'
-    className='bodypart-card'
+      type="button"
+      alignItems='center'
+      justifyContent='center'
+      className='bodyPart-card'
+
+      sx={{
+        borderTop: bodyPart === item ? '5  px solid blue' : '',
+        backgroundColor: 'white',
+        width: '270px',
+        height: '280px',
+        cursor: 'pointer',
+        
+
+        // window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
+      }}
     >
-        <img src={Icon} alt='dumbell'styles={{width: '40px', height: '40px'}} />
+      <img src={Icon} alt='dumbell' style={{ width: '40px', height: '40px' }} />
     </Stack>
   )
 }
 
 export default BodyPart
+
