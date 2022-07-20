@@ -3,10 +3,10 @@ import {Box, Stack} from '@mui/material';
 // import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 import BodyPart from './BodyPart';
+import ExerciseCard from './ExerciseCard';
 
 
-
-const HorizontalScrollbar = ({data, bodyPart, setBodyPart}) => {
+const HorizontalScrollbar = ({data, bodyParts,setBodyPart, bodyPart}) => {
   
   return (
     
@@ -24,7 +24,7 @@ const HorizontalScrollbar = ({data, bodyPart, setBodyPart}) => {
         
         >
           
-            <BodyPart item = {item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+          {bodyParts ? <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> : <ExerciseCard exercise={item} /> }
         </Box>
         )
         )}
@@ -33,5 +33,5 @@ const HorizontalScrollbar = ({data, bodyPart, setBodyPart}) => {
   );
 }
 
-export default HorizontalScrollbar
+export default HorizontalScrollbar;
 
