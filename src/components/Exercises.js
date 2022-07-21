@@ -1,23 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import  Pagination  from '@mui/material/Pagination';
-import {Box, Stack, Typography} from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import Pagination from '@mui/material/Pagination';
+import { Box, Stack, Typography } from '@mui/material';
 
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import ExerciseCard from './ExerciseCard';
+import Loader from './Loader';
 
-const Exercises = ({exercises, setExercises, bodyPart}) => {
-  
+const Exercises = ({ exercises, setExercises, bodyPart }) => {
+
   const [currentPage, setCurrentPage] = useState(1);
-  const exercisesPerPage = 9;
+  const [exercisesPerPage] = useState(6);
 
-  useEffect(() =>{
-    const fetchExercisesData = async () =>{
-      let exercisesData =[];
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      let exercisesData = [];
 
-      if (bodyPart === 'all'){
+      if (bodyPart === 'all') {
         exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
       }
-      else{
+      else {
         exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
       }
       setExercises(exercisesData);
@@ -28,43 +29,51 @@ const Exercises = ({exercises, setExercises, bodyPart}) => {
   }, [bodyPart]);
 
   const indexOfLastExercise = currentPage * exercisesPerPage;
-  const indexOfFirstExercise =indexOfLastExercise - exercisesPerPage;
+  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
   const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
-  
-  const paginate =(event, value) => {
+
+  const paginate = (event, value) => {
     setCurrentPage(value);
-     
-    window.scrollTo({ top: 1800, behavior: 'smooth' });
+
+    window.scrollTo({ top: 1200, behavior: 'smooth' });
 
   };
 
+  if (!currentExercises?.length) return <Loader />;
+
   return (
     <Box id="exercises"
-    sx={{mt: {lg: '110px'}}}
-    mt="50px"
-    p="20px">
-        <Typography variant="h3" mb="46px">
-          Showing Results
-        </Typography>
-        <Stack direction="row" sx={{gap: {lg: '110px', xs: '50px'}}}
+      sx={{ mt: { lg: '110px' } }}
+      mt="50px"
+      p="20px">
+
+      <Typography variant="h3" mb="46px">
+        Showing Results
+      </Typography>
+
+      <Stack direction="row" sx={{ gap: { lg: '110px', xs: '50px' } }}
         flexWrap="wrap" justifyContent="center">
-          {currentExercises.map((exercise, index) => (
-            <ExerciseCard key={index} exercise={exercise} />
-          ))}
-        </Stack>
-        <Stack mt='100px' alignItems='center'>
-            {exercises.length > 9 && (
-              <Pagination 
-              color='standard'
-              shape='rounded'
-              defaultPage={1}
-              count={Math.ceil(exercises.length / exercisesPerPage)}
-              page={currentPage}
-              onChange={paginate}
-              size='large'
-              />
-            )}
-        </Stack>
+
+        {currentExercises.map((exercise, index) => (
+          <ExerciseCard key={index} exercise={exercise} />
+        ))}
+      </Stack>
+
+      <Stack mt='100px' alignItems='center'>
+        {exercises.length > 9 && (
+
+          <Pagination
+            color='standard'
+            shape='rounded'
+            defaultPage={1}
+            count={Math.ceil(exercises.length / exercisesPerPage)}
+            page={currentPage}
+            onChange={paginate}
+            size='large'
+          />
+        )}
+      </Stack>
+
     </Box>
   )
 }
