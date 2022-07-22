@@ -14,6 +14,7 @@ Navigation menu contains-
 Great scrollable cards on which you can click and get results.
 
 ![image](https://user-images.githubusercontent.com/89523701/180344134-737da2d4-a2ee-42a1-ae7c-942bdfd5de6e.png)
+
 Initially showing results of all type of exercises with exercise cards.
 
 <p align="center">
