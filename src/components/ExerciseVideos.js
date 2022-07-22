@@ -13,8 +13,12 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
         Watch <span style={{ color: '#182bec', textTransform: 'capitalize' }}>{name}</span> exercise videos
       </Typography>
 
-      <Stack sx={{ flexDirection: { lg: 'row' }, gap: { lg: '110px', xs: '0px' } }} justifyContent='flex-sftart' flexWrap='wrap' alignItems='center'>
-        {exerciseVideos?.slice(0, 3)?.map((item, index) => (
+      <Stack sx={{ flexDirection: { lg: 'row' }, gap: { lg: '110px', xs: '0px' } }} 
+      justifyContent='flex-sftart' 
+      flexWrap='wrap' 
+      alignItems='center'
+      >
+        {exerciseVideos?.slice(0, 6)?.map((item, index) => (
           <a
             key={index}
             className="exercise-video"
