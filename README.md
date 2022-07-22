@@ -3,7 +3,7 @@ Made a fitness exercise app with React which lets you search for different exerc
 
 I have also deployed this app on Netlify. Here is the link:
 
-[Get in Get Fit](get-in-get-fit.netlify.app)
+[Get in Get Fit](https://get-in-get-fit.netlify.app)
 # Website Description 
 Navigation menu contains-
 1. Home
