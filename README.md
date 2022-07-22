@@ -8,6 +8,7 @@ I have also deployed this app on Netlify. Here is the link:
 Navigation menu contains-
 1. Home
 2. Exercises
+
 ![image](https://user-images.githubusercontent.com/89523701/180343979-7dc07299-7468-4107-9e81-b3befb26764d.png)
 
 Great scrollable cards on which you can click and get results.
