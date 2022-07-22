@@ -9,15 +9,21 @@ Navigation menu contains-
 1. Home
 2. Exercises
 ![image](https://user-images.githubusercontent.com/89523701/180343979-7dc07299-7468-4107-9e81-b3befb26764d.png)
- Great scrollable cards on which you can click and get results.
+
+Great scrollable cards on which you can click and get results.
+
 ![image](https://user-images.githubusercontent.com/89523701/180344134-737da2d4-a2ee-42a1-ae7c-942bdfd5de6e.png)
 Initially showing results of all type of exercises with exercise cards.
 
-![image](https://user-images.githubusercontent.com/89523701/180346311-0722b44d-b71b-424c-9b86-e5589a08108e.png)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/89523701/180346311-0722b44d-b71b-424c-9b86-e5589a08108e.png">
+</p>
 
-By clicking on any of the exercise cards you will reach this page where a brief detail of your clicked exercise, youtube videos links, similar target muscles and similar equipment exercises are present.
+By clicking on any of the exercise cards you will reach this page where a brief detail of your clicked exercise, youtube videos links, similar target muscles and       similar equipment exercises are present.
 
-![image](https://user-images.githubusercontent.com/89523701/180345033-1d9334ac-26bb-4b7a-8f3a-e159c1ce03ec.png)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/89523701/180345033-1d9334ac-26bb-4b7a-8f3a-e159c1ce03ec.png">
+</p>
 
 # INSTALL AND RUN 
 1. Download the code.
